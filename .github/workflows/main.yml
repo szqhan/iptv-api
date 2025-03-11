@@ -14,6 +14,10 @@ jobs:
       matrix:
         operating-system: [ 'ubuntu-20.04' ]
     steps:
+      # - uses: actions/checkout@v4 
+      # - name: get branch name
+      #   run: br_name=short_ref::${GITHUB_REF#refs/*/}
+        
       - name: Set branch name
         id: vars
         run: echo "BRANCH_NAME=${{ github.repository_owner == 'szqhan' && 'my-branch' || 'master' }}" >> $GITHUB_ENV
